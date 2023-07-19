@@ -53,10 +53,7 @@ const App = () => {
       }}
     >
       {/* Failed promise exampe */}
-      <LoadingAnimation
-        open={open}
-        setOpen={setOpen}
-      />
+      <LoadingAnimation open={open} setOpen={setOpen} />
       <ThemeProvider theme={theme}>
         <Grid container justifyContent="center">
           <Grid item xs={7}>

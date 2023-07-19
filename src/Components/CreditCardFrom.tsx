@@ -134,6 +134,32 @@ const CreditCardForm = ({
           </Grid>
         </form>
       </Box>
+      {/* leave a note saying it was built by me and made for desktop only in the bottom right corner */}
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: 0,
+          right: 0,
+          m: 2,
+        }}
+      >
+        <Typography
+          sx={{
+            color: "#000",
+            fontWeight: 700,
+            fontSize: 14,
+          }}
+        >
+          Built with ❤️ for Desktop only by{" "}
+          <a
+            href="https://busaidi.tech/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Ahmed Adil Ahmed Al Busaidi
+          </a>
+        </Typography>
+      </Box>
     </ThemeProvider>
   );
 };

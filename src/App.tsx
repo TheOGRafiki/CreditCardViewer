@@ -1,9 +1,4 @@
 import {
-  Card,
-  CardContent,
-  CardActions,
-  Button,
-  TextField,
   createTheme,
   ThemeProvider,
   Grid,
@@ -26,15 +21,6 @@ export const theme = createTheme({
       color: "#333", // Set default text color to a dark color
     },
   },
-  components: {
-    MuiOutlinedInput: {
-      styleOverrides: {
-        root: {
-          borderRadius: 10, // Rounded input corners
-        },
-      },
-    },
-  },
   palette: {
     primary: {
       main: primaryColor, // Use primaryColor as the main color for buttons and other components
@@ -43,29 +29,53 @@ export const theme = createTheme({
 });
 
 const App = () => {
-  const [formData, setFormData] = useState({});
-  const [showCard, setShowCard] = useState(false);
+  const [formData, setFormData] = useState({
+    cardNumber: "",
+    cardHolderName: "",
+    expirationMonth: "",
+    expirationYear: "",
+    cvv: "",
+  });
+
+  const showSubmitAlert = () => {
+    alert("Form submitted!");
+  };
 
   return (
     <Box
       sx={{
         height: "100vh",
+        width: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        overflow: "hidden", // Hide the scrollbar
+        m: 0, // Remove margins
+        p: 0, // Remove padding
+        mb: -8, // Remove bottom margin
+        overflow: "hidden", // Hide overflowing content
       }}
     >
       <ThemeProvider theme={theme}>
-        <Grid container justifyContent="center" sx={{ mb: 3 }}>
-          <Grid item xs={7}>
-            <CreditCardDisplay />
+        <Grid container justifyContent="center">
+          <Grid
+            item
+            xs={7}
+
+          >
+            <CreditCardDisplay
+              cardHolderName={formData.cardHolderName}
+              cardNumber={formData.cardNumber}
+              expirationDate={
+                formData.expirationMonth + "/" + formData.expirationYear
+              }
+              cvv={formData.cvv}
+            />
           </Grid>
           <Grid item xs={5}>
             <CreditCardForm
               formData={formData}
               setFormData={setFormData}
-              onSubmit={() => setShowCard(true)}
+              onSubmit={showSubmitAlert}
             />
           </Grid>
         </Grid>

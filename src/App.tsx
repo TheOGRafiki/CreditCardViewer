@@ -42,14 +42,13 @@ const App = () => {
   return (
     <Box
       sx={{
-        height: "100vh",
+        height: "100%",
         width: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         m: 0, // Remove margins
         p: 0, // Remove padding
-        mb: -8, // Remove bottom margin
         overflow: "hidden", // Hide overflowing content
       }}
     >

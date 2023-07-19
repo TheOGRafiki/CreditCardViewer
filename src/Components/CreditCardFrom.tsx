@@ -80,7 +80,7 @@ const CreditCardForm = ({
           display: "flex",
           alignItems: "center", // Center form vertically
           justifyContent: "center", // Center form horizontally
-          height: "100vh", // Set the outer container height to full viewport height
+          height: "100%", // Set the outer container height to full viewport height
         }}
       >
         <form>

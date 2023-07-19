@@ -61,20 +61,19 @@ const CreditCardDisplay = ({
       <Box
         sx={{
           display: "flex",
-          width: "100%",
           justifyContent: "center",
           alignItems: "center",
-          minHeight: "100vh",
         }}
       >
         {/* FRONT CARD */}
         <Box
           sx={{
             width: "50%", // Take up half of the width
-            height: "100vh", // Full height
+            height: "98vh", // Set the height to "100%" instead of "100vh"
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            borderRadius: 2,
             background: "linear-gradient(45deg, #9C27B0, #673AB7)", // Background gradient
           }}
         >
@@ -83,7 +82,6 @@ const CreditCardDisplay = ({
               width: "80vh",
               height: "auto",
               borderRadius: 2,
-              m: 1,
               display: "flex",
               flexDirection: "column",
               position: "absolute", // Set the position to absolute
@@ -175,7 +173,7 @@ const CreditCardDisplay = ({
         <Box
           sx={{
             width: "50%", // Take up half of the width
-            height: "100vh", // Full height
+            height: "100%", // Set the height to "100%" instead of "100vh"
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -186,7 +184,6 @@ const CreditCardDisplay = ({
               width: "80vh",
               height: "auto",
               borderRadius: 2,
-              m: 1,
               display: "flex",
               flexDirection: "column",
               background: "#000",

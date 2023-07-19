@@ -1,12 +1,8 @@
-import {
-  createTheme,
-  ThemeProvider,
-  Grid,
-  Box,
-} from "@mui/material";
+import { createTheme, ThemeProvider, Grid, Box } from "@mui/material";
 import { useState } from "react";
 import CreditCardForm from "./Components/CreditCardFrom";
 import CreditCardDisplay from "./Components/CreditCardDisplay";
+import LoadingAnimation from "./Components/LoadingCircle";
 
 // Define the primary color used in the theme
 const primaryColor = "#4285F4";
@@ -37,8 +33,10 @@ const App = () => {
     cvv: "",
   });
 
+  const [open, setOpen] = useState<boolean>(false);
+
   const showSubmitAlert = () => {
-    alert("Form submitted!");
+    setOpen(true);
   };
 
   return (
@@ -55,13 +53,14 @@ const App = () => {
         overflow: "hidden", // Hide overflowing content
       }}
     >
+      {/* Failed promise exampe */}
+      <LoadingAnimation
+        open={open}
+        setOpen={setOpen}
+      />
       <ThemeProvider theme={theme}>
         <Grid container justifyContent="center">
-          <Grid
-            item
-            xs={7}
-
-          >
+          <Grid item xs={7}>
             <CreditCardDisplay
               cardHolderName={formData.cardHolderName}
               cardNumber={formData.cardNumber}

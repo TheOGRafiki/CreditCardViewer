@@ -68,12 +68,11 @@ const CreditCardDisplay = ({
         {/* FRONT CARD */}
         <Box
           sx={{
-            width: "50%", // Take up half of the width
-            height: "98vh", // Set the height to "100%" instead of "100vh"
+            width: "50%", 
+            height: "100vh", 
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            borderRadius: 2,
             background: "linear-gradient(45deg, #9C27B0, #673AB7)", // Background gradient
           }}
         >
